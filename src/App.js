@@ -1,3 +1,4 @@
+import { Component } from 'react';
 import './App.css';
 
 const list_etudiants = [
@@ -11,9 +12,25 @@ const list_etudiants = [
   { nom: 'Riyad', math: 19, phys: 11, fr: 10 }
 ]
 
+class Composant1 extends Component {
+  render() {
+    return <div>
+
+    </div>
+  }
+}
+
+function Composant2(){
+  return <div>
+
+  </div>
+}
+
 function App() {
   return (
     <div className="container">
+        <Composant1 />
+        <Composant2 />
     </div>
   );
 }
