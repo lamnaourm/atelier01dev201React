@@ -15,22 +15,45 @@ const list_etudiants = [
 class Composant1 extends Component {
   render() {
     return <div>
-
+      <ul>
+        {list_etudiants.map(element =>
+          <li>{element.nom} - Moyenne {((element.math+element.phys+element.fr)/3).toFixed(2)}</li>
+        )}
+      </ul>
     </div>
   }
 }
 
-function Composant2(){
+function Composant2() {
   return <div>
-
+    <table>
+      <tr>
+        <th>Nom</th>
+        <th>Math</th>
+        <th>Phys</th>
+        <th>Fr</th>
+        <th>Moyanne</th>
+      </tr>
+      {
+        list_etudiants.map(element => 
+            <tr>
+              <td>{element.nom}</td>
+              <td>{element.math}</td>
+              <td>{element.phys}</td>
+              <td>{element.fr}</td>
+              <td>{((element.math+element.phys+element.fr)/3).toFixed(2)}</td>
+            </tr>
+          )
+      }
+    </table>
   </div>
 }
 
 function App() {
   return (
     <div className="container">
-        <Composant1 />
-        <Composant2 />
+      <Composant1 />
+      <Composant2 />
     </div>
   );
 }
